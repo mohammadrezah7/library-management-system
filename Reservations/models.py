@@ -4,8 +4,8 @@ from Books.models import book
 class reservations(models.Model):
     available_books = book.objects.filter(is_availabe=True)
     list_books = []
-    for book in available_books:
-        a = (book.title.upper, f'{book.title}')
+    for i in available_books:
+        a = (i.title.upper(), f'{i.title}')
         list_books.append(a)
         a = ()
     reserver_name = models.CharField(max_length=300, verbose_name='reserver_name', default="")
